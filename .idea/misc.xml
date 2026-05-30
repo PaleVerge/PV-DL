@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="KubernetesApiProvider">{}</component>
-  <component name="ProjectRootManager" version="2" project-jdk-name="26" project-jdk-type="JavaSDK">
+  <component name="Black">
+    <option name="sdkName" value="Python 3.14 (PV-DL)" />
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_26" default="true" project-jdk-name="Python 3.14 (PV-DL)" project-jdk-type="Python SDK">
     <output url="file://$PROJECT_DIR$/out" />
   </component>
 </project>
