@@ -1,7 +1,11 @@
+import numpy as np
+
 def OR(x1,x2):
-    w1,w2,theta=0.5,0.5,0
-    tmp=w1*x1+w2*x2
-    if(tmp<=theta):
+    x=np.array([x1,x2])
+    w=np.array([0.5,0.5])
+    b=-0.2
+    tmp=np.sum(x*w)+b
+    if tmp<=0:
         return 0
     else:
         return 1
