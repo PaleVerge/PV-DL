@@ -1,11 +1,39 @@
-def NOR(x1,x2):
-    w1,w2,theta=0.5,0.5,0
-    tmp=w1*x1+w2*x2
-    if(tmp<=theta):
-        return 1
-    else:
+import numpy as np
+def NAND(x1,x2):
+    x=np.array([x1,x2])
+    w=np.array([-0.5,-0.5])
+    b=0.8
+    tmp=np.sum(x*w)+b
+    if tmp<=0:
         return 0
-print("1 NOR 1 =",NOR(1,1))
-print("0 NOR 1 =",NOR(0,1))
-print("1 NOR 0 =",NOR(1,0))
-print("0 NOR 0 =",NOR(0,0))
+    else:
+        return 1
+
+def OR(x1,x2):
+    x=np.array([x1,x2])
+    w=np.array([0.5,0.5])
+    b=-0.2
+    tmp=np.sum(x*w)+b
+    if tmp<=0:
+        return 0
+    else:
+        return 1
+
+def AND(x1,x2):
+    x=np.array([x1,x2])
+    w=np.array([0.5,0.5])
+    b=-0.8
+    tmp=np.sum(x*w)+b
+    if tmp<=0:
+        return 0
+    else:
+        return 1
+
+def XOR(x1,x2):
+    s1=NAND(x1,x2)
+    s2=OR(x1,x2)
+    return AND(s1,s2)
+print("1 XOR 1 =",XOR(1,1))
+print("0 XOR 1 =",XOR(0,1))
+print("1 XOR 0 =",XOR(1,0))
+print("0 XOR 0 =",XOR(0,0))
